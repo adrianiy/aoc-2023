@@ -1,0 +1,26 @@
+{
+  "name": "aoc-2023",
+  "version": "1.0.0",
+  "description": "Advent of code 2023",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianiy/aoc-2023.git"
+  },
+  "author": "Adrián Insua Yañez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianiy/aoc-2023/issues"
+  },
+  "homepage": "https://github.com/adrianiy/aoc-2023#readme",
+  "dependencies": {
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "restartable": "rs",
+    "watch": [
+        "src/"
+    ],
+    "ext": "ts, yml",
+    "execMap": {
+        "ts": "ts-node"
+    }
+}

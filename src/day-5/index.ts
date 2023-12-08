@@ -187,8 +187,10 @@ export const solutuion2 = (input: string): number => {
   return lowestLocation;
 };
 
-// const res1 = solutuion1(input);
-const res2 = solutuion2(input);
+export default () => {
+  const res1 = solutuion1(input);
+  const res2 = solutuion2(input);
 
-// console.log("Solution 1: ", res1);
-console.log("Solution 2: ", res2);
+  console.log("Solution 1: ", res1);
+  console.log("Solution 2: ", res2);
+};

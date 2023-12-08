@@ -12,9 +12,9 @@ const DIRECTIONS = [
 ];
 
 enum Direction {
-  LEFT = 'left',
-  RIGHT = 'right',
-  BOTH = 'both',
+  LEFT = "left",
+  RIGHT = "right",
+  BOTH = "both",
 }
 
 const checkIsTouching = (matrix: string[][], i: number, j: number) => {
@@ -27,18 +27,22 @@ const checkIsTouching = (matrix: string[][], i: number, j: number) => {
 
 const getNumber = (row: string[], i: number, direction: Direction): string => {
   if (!row[i] || isNaN(+row[i])) {
-    return '';
+    return "";
   }
 
   const value = row[i];
 
-  row[i] = '.'
+  row[i] = ".";
 
-  const prevNumber = [Direction.LEFT, Direction.BOTH].includes(direction) ? getNumber(row, i-1, Direction.LEFT) : '';
-  const nextNumber = [Direction.RIGHT, Direction.BOTH].includes(direction) ? getNumber(row, i+1, Direction.RIGHT) : '';
+  const prevNumber = [Direction.LEFT, Direction.BOTH].includes(direction)
+    ? getNumber(row, i - 1, Direction.LEFT)
+    : "";
+  const nextNumber = [Direction.RIGHT, Direction.BOTH].includes(direction)
+    ? getNumber(row, i + 1, Direction.RIGHT)
+    : "";
 
   return `${prevNumber}${value}${nextNumber}`;
-}
+};
 
 const getAdjacentNumbers = (matrix: string[][], i: number, j: number) => {
   const adjacentNumbers: string[] = [];
@@ -52,7 +56,7 @@ const getAdjacentNumbers = (matrix: string[][], i: number, j: number) => {
   });
 
   return adjacentNumbers;
-}
+};
 
 export const solution1 = (value: string): number => {
   let solution = 0;
@@ -98,17 +102,17 @@ export const solution2 = (value: string): number => {
     .split("\n")
     .filter((line) => line.length)
     .map((line) => line.split(""));
-  
+
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       const value = matrix[i][j];
 
-      if (value === '*') {
+      if (value === "*") {
         const adjacentNumbers = getAdjacentNumbers(matrix, i, j);
 
         if (adjacentNumbers.length >= 2) {
           const ratio = adjacentNumbers.reduce((acc, curr) => acc * +curr, 1);
-          
+
           solution += ratio;
         }
       }
@@ -116,10 +120,12 @@ export const solution2 = (value: string): number => {
   }
 
   return solution;
-}
+};
 
-const res1 = solution1(input);
-const res2 = solution2(input);
+export default () => {
+  const res1 = solution1(input);
+  const res2 = solution2(input);
 
-console.log(`Solution 1: ${res1}`);
-console.log(`Solution 2: ${res2}`);
+  console.log(`Solution 1: ${res1}`);
+  console.log(`Solution 2: ${res2}`);
+};

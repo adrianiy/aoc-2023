@@ -79,8 +79,10 @@ export const solution2 = (value: string): number => {
   return Object.values(instances).reduce((acc, curr) => acc + (curr || 0), 0);
 };
 
-const res1 = solution1(input);
-const res2 = solution2(input);
+export default () => {
+  const res1 = solution1(input);
+  const res2 = solution2(input);
 
-console.log(`Solution 1: ${res1}`);
-console.log(`Solution 2: ${res2}`);
+  console.log(`Solution 1: ${res1}`);
+  console.log(`Solution 2: ${res2}`);
+};
